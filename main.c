@@ -3,6 +3,15 @@
 #include <stdio.h>
 #include <time.h>
 
+struct linked_list_elem {
+    int data;
+    struct linked_list_elem * next;
+};
+struct linked_list {
+    struct linked_list_elem * first;
+    struct linked_list_elem * last;
+};
+
 static gboolean button_clicked_async(gpointer data) {
     int button_index = GPOINTER_TO_INT(data);
     printf("Button %d clicked\n", button_index);
