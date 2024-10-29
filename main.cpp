@@ -44,10 +44,17 @@ public:
         GtkWidget* hauptBox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 20);
         gtk_window_set_child(GTK_WINDOW(fenster), hauptBox);
 
+        // Padding und Margin für die Hauptbox
+        gtk_widget_set_margin_top(hauptBox, 20);     // Abstand oben
+        gtk_widget_set_margin_bottom(hauptBox, 20);  // Abstand unten
+        gtk_widget_set_margin_start(hauptBox, 20);    // Abstand links
+        gtk_widget_set_margin_end(hauptBox, 20);      // Abstand rechts
+
         GtkWidget* spielfeld = gtk_grid_new();
         gtk_grid_set_row_spacing(GTK_GRID(spielfeld), 10);
         gtk_grid_set_column_spacing(GTK_GRID(spielfeld), 10);
 
+        // Zentrierung des Grids in der Box
         gtk_widget_set_halign(spielfeld, GTK_ALIGN_CENTER);
         gtk_widget_set_valign(spielfeld, GTK_ALIGN_CENTER);
         gtk_box_append(GTK_BOX(hauptBox), spielfeld);
@@ -66,6 +73,8 @@ public:
 
         gtk_window_present(GTK_WINDOW(fenster));
     }
+
+
 
     static int spielAusfuehren(int argc, char** argv) {
         GtkApplication* app = gtk_application_new("org.gtk.memoryspiel", G_APPLICATION_DEFAULT_FLAGS);
