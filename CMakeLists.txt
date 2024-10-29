@@ -1,12 +1,9 @@
 cmake_minimum_required(VERSION 3.28)
-project(Memory C)
+project(Memory CXX)  # Sprache auf CXX (C++) umstellen
 
-set(CMAKE_C_STANDARD 23)
+set(CMAKE_CXX_STANDARD 23)  # C++23 Standard setzen
 
-add_executable(Memory main.c)
-
-
-
+add_executable(Memory main.cpp)  # Datei auf main.cpp ändern
 
 # Find GTK4 package
 find_package(PkgConfig REQUIRED)
