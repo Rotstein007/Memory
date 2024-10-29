@@ -67,7 +67,7 @@ public:
         gtk_window_present(GTK_WINDOW(fenster));
     }
 
-    int spielAusfuehren(int argc, char** argv) {
+    static int spielAusfuehren(int argc, char** argv) {
         GtkApplication* app = gtk_application_new("org.gtk.memoryspiel", G_APPLICATION_DEFAULT_FLAGS);
         g_signal_connect(app, "activate", G_CALLBACK(spielStarten), nullptr);
         int status = g_application_run(G_APPLICATION(app), argc, argv);
@@ -77,6 +77,5 @@ public:
 };
 
 int main(int argc, char** argv) {
-    MemorySpiel spiel;
-    return spiel.spielAusfuehren(argc, argv);
+    return MemorySpiel::spielAusfuehren(argc, argv);
 }
