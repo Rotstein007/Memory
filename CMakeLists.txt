@@ -3,7 +3,13 @@ project(Memory CXX)  # Sprache auf CXX (C++) umstellen
 
 set(CMAKE_CXX_STANDARD 23)  # C++23 Standard setzen
 
-add_executable(Memory main.cpp)  # Datei auf main.cpp ändern
+add_executable(Memory main.cpp
+        LinkedList.cpp
+        LinkedList.h
+        LinkedList.h
+        MemorySpiel.cpp
+        MemorySpiel.h
+        LinkedList.h)  # Datei auf main.cpp ändern
 
 # Find GTK4 package
 find_package(PkgConfig REQUIRED)
