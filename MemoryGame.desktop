@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Memory Game
+Exec=/usr/bin/Memory
+Icon=img/img.png
+Type=Application
+Categories=Game;
