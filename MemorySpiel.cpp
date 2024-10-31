@@ -62,7 +62,7 @@ void MemorySpiel::spielZuruecksetzen(GtkWidget* /*widget*/, gpointer /*data*/) {
 
 void MemorySpiel::spielStarten(GtkApplication* app, gpointer benutzerDaten) {
     GtkWidget* fenster = gtk_application_window_new(app);
-    gtk_window_set_title(GTK_WINDOW(fenster), "Memory Spiel");
+    gtk_window_set_title(GTK_WINDOW(fenster), "Memory Game");
     gtk_window_set_default_size(GTK_WINDOW(fenster), 400, 500);
 
     GtkWidget* hauptBox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 20);

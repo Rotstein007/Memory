@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Memory Game
 Exec=/usr/bin/Memory
-Icon=img/img.png
+Icon=/usr/share/icons/hicolor/128x128/apps/MemoryGame.png
 Type=Application
 Categories=Game;
