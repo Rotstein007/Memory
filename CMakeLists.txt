@@ -3,7 +3,7 @@ project(Memory CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 
-# Füge alle Quell- und Header-Dateien hinzu
+# Add all source and header files
 set(SOURCES
         main.cpp
         LinkedList.cpp
@@ -15,18 +15,18 @@ set(HEADERS
         MemorySpiel.h
 )
 
-# Erstelle das ausführbare Ziel
+# Create the executable target
 add_executable(Memory ${SOURCES} ${HEADERS})
 
-# Finde das GTK4-Paket
+# Find the GTK4 package
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTK4 REQUIRED gtk4)
 
-# Füge die GTK4 Include-Verzeichnisse hinzu
+# Add the GTK4 include directories
 target_include_directories(Memory PRIVATE ${GTK4_INCLUDE_DIRS})
 
-# Verlinke die GTK4-Bibliotheken
+# Link the GTK4 libraries
 target_link_libraries(Memory PRIVATE ${GTK4_LIBRARIES})
 
-# Füge andere Compiler-Optionen hinzu (optional)
-add_compile_options(${GTK4_CFLAGS_OTHER})
+# Add other compiler options (optional)
+target_compile_options(Memory PRIVATE ${GTK4_CFLAGS_OTHER})
